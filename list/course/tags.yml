@@ -1,0 +1,9 @@
+GC:
+  label: 대학원 강의 
+  permalink: /Graduate-Course
+  description: 대학원생 대상 강의입니다.
+
+UC:
+  label: 학부 강의
+  permalink: /Undergrad-Course
+  description: 학부생 대상 강의입니다.

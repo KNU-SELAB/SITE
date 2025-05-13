@@ -1,0 +1,14 @@
+IA:
+  label: 해외 출원 특허 
+  permalink: /Internationally-Applied
+  description: SELAB에서 해외에 출원한 특허입니다.
+
+DA:
+  label: 국내 출원 특허
+  permalink: /Domestic-Applied
+  description: SELAB에서 국내에 출원한 특허입니다.
+
+DR:
+  label: 국내 등록 특허
+  permalink: /Domestic-Registered
+  description: SELAB에서 국내에 등록한 특허입니다.
