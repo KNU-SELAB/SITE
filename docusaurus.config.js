@@ -180,9 +180,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'STLAB.',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'KNU_STLAB',
           src: 'img/logo.svg',
         },
         items: [
@@ -243,7 +243,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+        copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
       },
       prism: {
         theme: prismThemes.github,

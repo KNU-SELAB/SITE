@@ -11,6 +11,7 @@
 
 ### 석사 과정
 
+- 이대규 : [mikeds0222@gmail.com](mailto:mikeds0222@gmail.com)
 - 김정인 : [99junginkim@gmail.com](mailto:99junginkim@gmail.com)
 
 ## Part time
@@ -25,7 +26,6 @@
 - 이성희 : [lee3229910@gmail.com](mailto:lee3229910@gmail.com)
 - 정승모 : [seungmo1025@knu.ac.kr](mailto:seungmo1025@knu.ac.kr)
 - 이재훈 : [atheros1004@naver.com](mailto:atheros1004@naver.com)
-- 서정민 : [baal1004@naver.com](mailto:baal1004@naver.com)
 ### 석사 과정
 - 맹한민 : [mhanmin@gmail.com](mailto:mhanmin@gmail.com)
 - 김성훈 : [uszzang@nate.com](mailto:uszzang@nate.com)
@@ -34,7 +34,7 @@
 - 박흥준 : [bbakeung@naver.com](mailto:bbakeung@naver.com)
 - 여창섭 : [ycs6841@givet.re.kr](mailto:ycs6841@givet.re.kr)
 - 김성하 : [sunghakim@gmail.com](mailto:sunghakim@gmail.com)
-- 김정권 : [1993kjk@gmail.com](mailto:1993kjk@gmail.com)
+- 김정권 (한국전력공사) : [1993kjk@gmail.com](mailto:1993kjk@gmail.com)
 - 김백진 : [bjkim@daooldns.co.kr](mailto:bjkim@daooldns.co.kr)
 ---
 ## 졸업생
@@ -43,11 +43,12 @@
 - 류동현 (ETRI) : [dhryu@etri.re.kr](mailto:dhryu@etri.re.kr)
 - 신영술 (경북대학교 복합지능ICT연구센터) : [youngsulshin@gmail.com](mailto:youngsulshin@gmail.com)
 - 류호동 (LG전자) : [hodong@gmail.com](mailto:hodong@gmail.com)
-- 백태산 (백교수 코딩스쿨) : [sans79@gmail.com](mailto:sans79@gmail.com)
+- 백태산 (비플러스엘 소프트웨어) : [sans79@gmail.com](mailto:sans79@gmail.com)
 - Ajay Kumar Jha (North Dakota State Univ, USA) : [ajaykjha123@yahoo.com](mailto:ajaykjha123@yahoo.com)
 - Hossain Muhammad Iqbal (Brac Univ, Bangladesh) : [milon_mi7@yahoo.com](mailto:milon_mi7@yahoo.com)
 - 정수용 (한화시스템) : [kyo1363@naver.com](mailto:kyo1363@naver.com)
-- 서강복 : [dating1227@gmail.com](mailto:dating1227@gmail.com)
+- 서강복 (자율군집 연구소) : [dating1227@gmail.com](mailto:dating1227@gmail.com)
+- 서정민 : [baal1004@naver.com](mailto:baal1004@naver.com)
 ### 석사
 - 김종형 (삼성전자) : [daegari.kim@samsung.com](mailto:daegari.kim@samsung.com)
 - 유민식 (LIG넥스원) : [msyoos123@nex1.co.kr](mailto:msyoos123@nex1.co.kr)
@@ -77,11 +78,11 @@
 - 장영근 (LG전자) : [youngkeun.jang@lge.com](mailto:youngkeun.jang@lge.com)
 - 황병일 : [halove2002@gmail.com](mailto:halove2002@gmail.com)
 - 공현우 (LG전자) : [hyunwoo.kong@lge.com](mailto:hyunwoo.kong@lge.com)
-- 곽용섭 (현대오토에버) : [iddqt@naver.com](mailto:iddqt@naver.com)
+- 곽용섭 (가이아3D) : [iddqt@naver.com](mailto:iddqt@naver.com)
 - 서성화 : [seonghwa0509@gmail.com](mailto:seonghwa0509@gmail.com)
 - 박태광 : [kopi2642@naver.com](mailto:kopi2642@naver.com)
 - 서보영 (LG전자) : [sby4529@gmail.com](mailto:sby4529@gmail.com)
-- 윤보람 (무지개연구소) : [yunstar1105@naver.com](mailto:yunstar1105@naver.com)
+- 윤보람 (한화시스템) : [yunstar1105@naver.com](mailto:yunstar1105@naver.com)
 - 강혁명 (LG전자) : [palpati0516@gmail.com](mailto:palpati0516@gmail.com)
 - 조규상 (LG전자) : [joks1000@gmail.com](mailto:joks1000@gmail.com)
 - Modestus : [vincent.nkembe16@gmail.com](mailto:vincent.nkembe16@gmail.com)

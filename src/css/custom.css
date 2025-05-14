@@ -1,30 +1,108 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* src/css/custom.css */
 
-/* You can override the default Infima variables here. */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/autoplay';
+@import 'swiper/css/effect-fade';
+
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* 라이트 모드 변수 */
+  --knu-deep-blue-bg: #003366;                 /* KNU 딥블루 (배경용) */
+  --knu-deep-blue-text: #003366;               /* KNU 딥블루 (텍스트/아이콘용) */
+  --knu-bright-blue-accent: #2979FF;
+
+  --homepage-section-primary-bg: #ffffff;
+  --homepage-section-secondary-bg: #f4f8fc;
+
+  --homepage-text-primary: #1c1e21;
+  --homepage-text-secondary: #374151;
+  --homepage-hero-title-text: #FFFFFF;
+  --homepage-hero-subtitle-text: #E0E7FF;
+  --homepage-text-on-hero-accent-button: #FFFFFF;
+
+  --homepage-card-bg: #ffffff;
+  --homepage-card-border-color: #e2e8f0;
+  --homepage-card-actual-shadow: 0 8px 25px rgba(0, 25, 51, 0.08);
+  --homepage-card-actual-shadow-hover: 0 15px 35px rgba(0, 25, 51, 0.12);
+
+  --hero-btn-primary-bg: var(--knu-bright-blue-accent);
+  --hero-btn-primary-border: var(--knu-bright-blue-accent);
+
+  --homepage-section-divider-color: var(--knu-deep-blue-text); /* 구분선은 텍스트용 KNU색 사용 */
+  --homepage-icon-accent-color: var(--knu-bright-blue-accent); /* 카드 내 작은 아이콘 등 */
+
+  --theme-transition-duration: 0.3s;
+  --theme-transition-timing-function: ease;
+
+
+  /* Swiper UI 테마 변수 (라이트 모드) */
+  --swiper-navigation-color: var(--knu-deep-blue-text);
+  --swiper-pagination-color: var(--knu-deep-blue-text); /* 현재 활성화된 페이지네이션 점 */
+  --swiper-pagination-bullet-inactive-color: var(--ifm-color-emphasis-500); /* 비활성 점 */
+  --swiper-pagination-bullet-inactive-opacity: 0.7;
+  --swiper-preloader-color: var(--knu-deep-blue-text); /* 로딩 스피너 색상 */
+
+  /* 캐러셀 슬라이드 예시 스타일 변수 (라이트 모드) */
+  --carousel-slide-bg: var(--ifm-card-background-color);
+  --carousel-slide-text-color: var(--ifm-font-color-base);
+  --carousel-slide-title-color: var(--knu-deep-blue-text);
+  --carousel-slide-border-color: var(--ifm-color-emphasis-300);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+html[data-theme='dark'] {
+  /* 다크 모드 변수 */
+  --knu-deep-blue-bg: #0A192F;                 /* KNU 딥블루 (배경용) - Hero 배경에 사용 (매우 어두움) */
+  --knu-deep-blue-text: #79a6dc;               /* KNU 딥블루 (텍스트/아이콘용) - 다크모드에서 밝은 파랑 */
+  --knu-bright-blue-accent: #82aaff;
+
+  --homepage-section-primary-bg: #1e1e1e;
+  --homepage-section-secondary-bg: #232a31;
+
+  --homepage-text-primary: #e0e0e0;
+  --homepage-text-secondary: #b0b8c0;
+  --homepage-hero-title-text: #FFFFFF;
+  --homepage-hero-subtitle-text: #c5d6f0;
+  --homepage-text-on-hero-accent-button: #0A192F;
+
+  --homepage-card-bg: #2a303c;
+  --homepage-card-border-color: #404854;
+  --homepage-card-actual-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  --homepage-card-actual-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  --hero-btn-primary-bg: var(--knu-bright-blue-accent);
+  --hero-btn-primary-border: var(--knu-bright-blue-accent);
+
+  --homepage-section-divider-color: #558dca;   /* 섹션 구분선은 가시성 좋은 중간톤 파랑 유지 */
+  --homepage-icon-accent-color: var(--knu-bright-blue-accent); /* 카드 내 작은 아이콘은 밝은 액센트 유지 */
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+
+
+  /* Swiper UI 테마 변수 (다크 모드) */
+  --swiper-navigation-color: var(--knu-deep-blue-text); /* --knu-deep-blue-text가 다크모드에선 밝은색임 */
+  --swiper-pagination-color: var(--knu-deep-blue-text);
+  --swiper-pagination-bullet-inactive-color: var(--ifm-color-emphasis-500);
+  --swiper-pagination-bullet-inactive-opacity: 0.6;
+  --swiper-preloader-color: var(--knu-deep-blue-text);
+
+  /* 캐러셀 슬라이드 예시 스타일 변수 (다크 모드) */
+  --carousel-slide-bg: var(--ifm-card-background-color);
+  --carousel-slide-text-color: var(--ifm-font-color-base);
+  --carousel-slide-title-color: var(--knu-deep-blue-text);
+  --carousel-slide-border-color: var(--ifm-color-emphasis-300);
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 1.5rem;
+   color: var(--swiper-navigation-color) !important;
+}
+.swiper-pagination-bullet-active {
+   background: var(--swiper-pagination-color) !important;
 }
