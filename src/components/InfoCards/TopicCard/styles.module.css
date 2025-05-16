@@ -1,0 +1,77 @@
+/* src/components/InfoCards/TopicCard/styles.module.css */
+.topicCard {
+  background-color: var(--homepage-card-bg);
+  border: 1px solid var(--homepage-card-border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--homepage-card-actual-shadow);
+  color: var(--homepage-text-secondary);
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.topicHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.topicIcon {
+  font-size: 2.5rem; /* 아이콘 크기 */
+  margin-right: 1rem;
+  color: var(--homepage-icon-accent-color);
+  line-height: 1;
+}
+
+.topicTitle {
+  color: var(--knu-deep-blue-text);
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.introduction {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.aspectsSection {
+  margin-bottom: 1.5rem;
+}
+
+.aspectsTitle {
+  font-size: 1.1rem;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.aspectsList {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.aspectItem {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2em; /* 불릿 대신 들여쓰기 효과 */
+  position: relative;
+}
+.aspectItem::before { /* 커스텀 불릿 */
+  content: '✓'; /* 또는 '●', '–' 등 */
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+.aspectItem strong {
+  color: var(--ifm-font-color-base);
+}
+
+.topicLinkButton {
+  margin-top: 1rem;
+  display: inline-block;
+}

@@ -1,0 +1,111 @@
+/* src/components/InfoCards/ProfessorCard/styles.module.css */
+.professorCard {
+  background-color: var(--homepage-card-bg);
+  border: 1px solid var(--homepage-card-border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--homepage-card-actual-shadow);
+  display: flex;
+  flex-direction: column; /* 모바일에서는 세로로 */
+  gap: 1.5rem;
+  color: var(--homepage-text-secondary);
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+@media (min-width: 768px) {
+  .professorCard {
+    flex-direction: row; /* 데스크탑에서는 가로로 */
+  }
+}
+
+.photoSection {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--knu-bright-blue-accent);
+  background-color: var(--ifm-color-emphasis-200); /* 이미지 없을때 배경 */
+}
+
+.infoSection {
+  flex-grow: 1;
+}
+
+.name {
+  color: var(--knu-deep-blue-text);
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--ifm-font-color-secondary); /* Docusaurus 변수 활용 */
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.contactInfo p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.contactInfo p a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+}
+.contactInfo p a:hover {
+  text-decoration: underline;
+  color: var(--ifm-link-hover-color);
+}
+
+
+.detailSection {
+  margin-top: 1.5rem;
+}
+
+.detailTitle {
+  font-size: 1.1rem;
+  color: var(--knu-deep-blue-text);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.25rem;
+}
+
+.detailSection ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.detailSection ul li {
+  margin-bottom: 0.3rem;
+}
+
+.interestsList {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.interestItem {
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.labLinkButton {
+  margin-top: 1.5rem;
+}

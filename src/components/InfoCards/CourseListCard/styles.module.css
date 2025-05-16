@@ -1,0 +1,90 @@
+/* src/components/InfoCards/CourseListCard/styles.module.css */
+.courseListCard {
+  background-color: var(--homepage-card-bg);
+  border: 1px solid var(--homepage-card-border-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem; /* 패딩 조정 */
+  box-shadow: var(--homepage-card-actual-shadow);
+  color: var(--homepage-text-secondary);
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.cardIconHeader {
+  font-size: 2rem;
+  margin-right: 0.75rem;
+  color: var(--homepage-icon-accent-color);
+}
+
+.cardTitle {
+  color: var(--knu-deep-blue-text);
+  font-size: 1.5rem; /* 타이틀 크기 조정 */
+  margin: 0;
+}
+
+.courseList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.courseItem {
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+}
+.courseItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.courseItem:first-child {
+  padding-top: 0;
+}
+
+
+.courseInfo {
+  display: flex;
+  align-items: baseline; /* 이름과 메타 정보 기준선 맞춤 */
+  flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+  margin-bottom: 0.3rem;
+}
+
+.courseName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin-right: 0.5rem;
+}
+
+.courseMeta {
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+  white-space: nowrap;
+}
+
+.courseDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.syllabusLink {
+  font-size: 0.85rem;
+  color: var(--ifm-link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.syllabusLink:hover {
+  text-decoration: underline;
+  color: var(--ifm-link-hover-color);
+}

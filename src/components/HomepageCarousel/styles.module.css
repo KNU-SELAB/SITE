@@ -1,83 +1,39 @@
 /* src/components/HomepageCarousel/styles.module.css */
 
 .carouselSection {
-  padding: 3rem 0; /* 캐러셀 섹션 상하 여백 */
+  padding: 4rem 0; /* 이전보다 상하 여백 약간 늘림 */
   /* background-color: var(--ifm-background-color); */ /* 필요시 섹션 배경색 */
-  /* transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function); */
 }
 
-/* Swiper 컨테이너 자체에 대한 스타일 (필요시) */
 .mySwiper {
   width: 100%;
-  /* height: 400px; */ /* 예시 높이, 내용에 따라 자동 조절되거나 고정 */
-  border-radius: 12px; /* 캐러셀 모서리 둥글게 */
-  box-shadow: var(--ifm-global-shadow-lw); /* Docusaurus 기본 그림자 */
-  overflow: hidden; /* 내부 컨텐츠가 튀어나오지 않도록 */
+  border-radius: 12px;
+  box-shadow: var(--ifm-global-shadow-md); /* Docusaurus 기본 그림자 (더 진한 것) */
+  overflow: hidden;
 }
 
 .swiperSlide {
   display: flex;
-  align-items: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 (카드가 슬라이드보다 작을 경우) */
+  /* align-items: flex-start; */ /* 수직 상단 정렬을 원할 경우 */
   justify-content: center; /* 수평 중앙 정렬 */
-  text-align: center;
-  /* background-color: var(--carousel-slide-bg); */ /* 슬라이드 기본 배경색 - 개별 슬라이드에서 오버라이드 가능 */
-  color: var(--carousel-slide-text-color);
-  padding: 3rem 2rem; /* 슬라이드 내부 여백 */
-  min-height: 350px; /* 최소 높이 지정 */
+  min-height: 500px; /* 카드 내용이 충분히 표시될 수 있는 최소 높이 (필요시 조절) */
+  padding: 1rem; /* 슬라이드 자체의 패딩 (카드가 너무 꽉 차 보이지 않도록) */
   box-sizing: border-box;
-  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
-              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  background-color: transparent; /* 슬라이드 자체 배경은 투명하게, 카드 배경색이 보이도록 */
 }
 
-/* 슬라이드 내부 컨텐츠 영역 (이미지와 텍스트 분리 시 유용) */
-.slideContent {
-  max-width: 700px; /* 텍스트가 너무 길어지지 않도록 */
-}
+/*
+  만약 카드 컴포넌트들이 슬라이드 내에서 항상 꽉 찬 너비를 가지게 하고 싶지 않다면,
+  카드 컴포넌트 자체의 스타일에 max-width를 설정하고,
+  .swiperSlide는 align-items, justify-content로 카드를 중앙 배치합니다.
+  현재는 카드들이 슬라이드 너비만큼 늘어날 수 있도록 되어있습니다 (카드 자체 스타일에 따름).
+*/
 
-.slideImage {
-  /* max-height: 200px; */ /* 이미지 크기 제한 예시 */
-  /* margin-bottom: 1.5rem; */
-  /* object-fit: cover; */
-}
-
-.slideTitle {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--carousel-slide-title-color); /* custom.css에서 정의한 변수 사용 */
-  margin-bottom: 1rem;
-  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
-}
-
-.slideDescription {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  color: var(--carousel-slide-text-color);
-  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
-}
-
-.slideLink {
-  color: var(--ifm-link-color);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
-}
-
-.slideLink:hover {
-  color: var(--ifm-link-hover-color);
-  text-decoration: underline;
-}
-
-/* Swiper 네비게이션/페이지네이션 기본 스타일은 custom.css 에서 CSS 변수로 제어 */
-/* 좀 더 세부적인 스타일 조정이 필요하면 여기서 직접 선택하여 수정 */
-/* 예시:
-:global(.swiper-button-next),
-:global(.swiper-button-prev) {
-  color: var(--swiper-navigation-color);
-  width: calc(var(--swiper-navigation-size) / 44 * 32);
-  height: calc(var(--swiper-navigation-size) / 44 * 32);
-}
-:global(.swiper-pagination-bullet-active) {
-  background-color: var(--swiper-pagination-color);
-}
+/* 이전에 있던 .customSlideContent 관련 스타일은 각 카드 컴포넌트가 자체 스타일을 가지므로 제거하거나 주석 처리합니다. */
+/*
+.customSlideContent { ... }
+.customSlideContent h4 { ... }
+.customSlideContent p { ... }
+.codeExample { ... }
 */
