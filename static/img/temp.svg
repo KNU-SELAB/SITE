@@ -1,4 +1,4 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <style>
     @font-face {
         font-family: 'Libre Barcode 39 Text'; /* 여기서 정의한 이름 사용 */
@@ -8,7 +8,7 @@
     }
       .stlab-text {
       font-family: 'Libre Barcode 39 Text', 'Courier New', monospace; /* Libre Barcode 39 Text 우선, 없으면 Courier New, monospace 순으로 적용 */
-      font-size: 140px; /* 정사각형 안에 STLAB 글자가 적절히 보이도록 크기 조정 (필요시 조절) */
+      font-size: 70px; /* 정사각형 안에 STLAB 글자가 적절히 보이도록 크기 조정 (필요시 조절) */
       font-weight: 400; /* Barcode 폰트는 보통 normal weight가 적합 */
       fill: #0D47A1; /* 이전과 동일한 진한 파란색 계열 */
       text-anchor: middle; /* 수평 중앙 정렬 */

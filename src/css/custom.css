@@ -5,8 +5,14 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/autoplay';
 @import 'swiper/css/effect-fade';
-
-
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Noto+Sans+KR:wght@100..900&display=swap');
+@font-face {
+  font-family: 'Libre Barcode 39 Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; 
+  src: url(https://fonts.gstatic.com/s/librebarcode39text/v25/sJoa3KhViNKANw_E3LwoDXM_HcfDM2R704c4xN16Fw.woff2) format('woff2'); 
+}
 :root {
   /* 라이트 모드 변수 */
   --knu-deep-blue-bg: #003366;                 /* KNU 딥블루 (배경용) */
@@ -106,3 +112,5 @@ h1, h2, h3, h4, h5, h6, p, li {
 .swiper-pagination-bullet-active {
    background: var(--swiper-pagination-color) !important;
 }
+
+

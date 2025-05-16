@@ -93,7 +93,7 @@ const config = {
       {
         id:'Internatinal-Conference',
         routeBasePath:'International-Conference',
-        path:'./list/international-Conference',
+        path:'./list/international-conference',
         blogTitle:'국제 학술대회',
         blogDescription:'국제 학술대회 관련',
         blogSidebarCount:5,
