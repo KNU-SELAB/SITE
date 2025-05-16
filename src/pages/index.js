@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'; // useEffect 추가 (스크롤 애니메이션용)
+import React, { useState, useEffect } from 'react'; // useEffect 추가 (스크롤 애니메이션용)
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageCarousel from '@site/src/components/HomepageCarousel';
+import DesktopHomepageCarousel from '@site/src/components/DesktopHomepageCarousel';
+import MobileHomepageCarousel from '@site/src/components/MobileHomepageCarousel'; // 새로 추가
+import { useViewportSize } from '@site/src/hooks/useViewportSize';
 
-// --- HomepageHeader (이전과 동일 또는 약간의 스타일 조정) ---
-// ... (이전 코드와 동일하게 유지)
+const MOBILE_BREAKPOINT = 768; // 모바일로 간주할 너비 기준 (예: 768px 이하)
+
 const heroStyle = {
   backgroundColor: '#003366',
   color: '#FFFFFF',
@@ -177,14 +179,20 @@ function useSimpleScrollAnimation() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   useSimpleScrollAnimation();
-
+  const windowWidth = useViewportSize(); // 최상위 레벨에서 호출
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    // 컴포넌트가 클라이언트에서 마운트된 후에 isClient를 true로 설정
+    setIsClient(true);
+  }, []);
+  const isMobile = windowWidth !== undefined ? windowWidth <= MOBILE_BREAKPOINT : false; // 초기값 false
   return (
     <Layout
       title={`${siteConfig.title}`}
       description="경북대학교 소프트웨어 테스팅 연구실입니다.">
       <HomepageHeader />
       <main>
-        <HomepageCarousel/>
+        {isClient? (isMobile ? <MobileHomepageCarousel /> : <DesktopHomepageCarousel />) : (<div style={{ minHeight: '400px' }} />)}
         <ResearchAreaSection />
         <RelatedTechnologiesSection />
       </main>

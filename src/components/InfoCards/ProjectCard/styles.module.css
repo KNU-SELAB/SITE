@@ -2,32 +2,47 @@
 .projectCard {
   background-color: var(--homepage-card-bg);
   border: 1px solid var(--homepage-card-border-color);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: var(--homepage-card-actual-shadow);
-  color: var(--homepage-text-secondary);
+  color: var(--info-card-text-color);
+  /* min-height: var(--info-card-min-height); */ /* 주석 처리 또는 삭제 */
+  height: 100%; /* 추가: 부모 슬라이드 높이에 맞춤 */
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* 이미지 등이 넘치지 않도록 */
+  overflow: hidden; /* 이미지 등이 넘치지 않도록 주의 */
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
               border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
               box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
-              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+              color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              transform 0.3s ease-out;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--homepage-card-actual-shadow-hover);
+  border-color: var(--knu-deep-blue-text);
 }
 
 .projectImageContainer {
   width: 100%;
-  max-height: 200px; /* 이미지 최대 높이 */
+  max-height: 180px;
+  min-height: 150px; /* 이미지가 없을 경우를 대비해 최소 높이, 또는 배경색 지정 */
   overflow: hidden;
+  background-color: var(--ifm-color-emphasis-100);
+  display: flex; /* 내부 이미지 정렬 */
+  align-items: center;
+  justify-content: center;
 }
 .projectImage {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 이미지가 비율 유지하며 채우도록 */
+  object-fit: cover;
+  display: block;
 }
 
 .projectContent {
-  padding: 1.5rem;
-  flex-grow: 1;
+  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal);
+  flex-grow: 1; /* 이 부분이 중요 */
   display: flex;
   flex-direction: column;
 }
@@ -36,32 +51,37 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .projectName {
-  color: var(--knu-deep-blue-text);
-  font-size: 1.5rem;
+  color: var(--info-card-title-color);
+  font-size: var(--info-card-title-font-size);
+  font-weight: var(--info-card-title-font-weight);
   margin: 0;
-  flex-grow: 1; /* 제목이 길 경우 공간 차지 */
+  line-height: 1.3;
 }
 
 .statusBadge {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-  margin-left: 0.5rem; /* 제목과의 간격 */
-  white-space: nowrap; /* 줄바꿈 방지 */
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--info-card-tag-border-radius);
+  white-space: nowrap;
+  margin-top: 0.2rem;
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 .statusOngoing {
-  background-color: var(--ifm-color-success-light);
-  color: var(--ifm-color-success-dark);
+  background-color: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-contrast-foreground);
   border: 1px solid var(--ifm-color-success);
 }
 .statusCompleted {
-  background-color: var(--ifm-color-info-light);
-  color: var(--ifm-color-info-dark);
+  background-color: var(--ifm-color-info-contrast-background);
+  color: var(--ifm-color-info-contrast-foreground);
   border: 1px solid var(--ifm-color-info);
 }
 .statusDefault {
@@ -70,18 +90,17 @@
   border: 1px solid var(--ifm-color-emphasis-400);
 }
 
-
 .period {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ifm-font-color-secondary);
-  margin-bottom: 1rem;
+  margin-bottom: var(--info-card-title-margin-bottom);
 }
 
 .description {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--info-card-text-font-size);
+  line-height: var(--info-card-text-line-height);
   margin-bottom: 1rem;
-  flex-grow: 1; /* 설명 부분이 남은 공간 채우도록 */
+  flex-grow: 1; /* 설명 부분이 남은 공간을 최대한 차지 */
 }
 
 .funding {
@@ -91,16 +110,19 @@
 }
 .funding strong {
   color: var(--ifm-font-color-base);
+  font-weight: 600;
 }
 
 .techStack {
   margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  font-size: var(--info-card-text-font-size); /* 기술 스택 본문도 통일 */
 }
-.techStack strong {
+.techStack strong { /* "주요 기술:" 라벨 */
   display: block;
-  margin-bottom: 0.5rem;
-  color: var(--ifm-font-color-base);
+  margin-bottom: var(--info-card-subtitle-margin-bottom);
+  color: var(--info-card-subtitle-color);
+  font-weight: var(--info-card-subtitle-font-weight);
+  font-size: var(--info-card-subtitle-font-size);
 }
 .tags {
   display: flex;
@@ -108,15 +130,18 @@
   gap: 0.5rem;
 }
 .tag {
-  background-color: var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-dark);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  border: 1px solid var(--ifm-color-primary-light);
+  background-color: var(--info-card-tag-bg);
+  color: var(--info-card-tag-text-color);
+  padding: var(--info-card-tag-padding);
+  border-radius: var(--info-card-tag-border-radius);
+  font-size: var(--info-card-tag-font-size);
+  border: var(--info-card-tag-border);
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
 .projectLinkButton {
-  margin-top: auto; /* 버튼을 카드 하단에 위치 */
-  align-self: flex-start; /* 왼쪽 정렬 */
+  margin-top: auto; /* 버튼을 카드 하단에 붙이기 */
+  align-self: flex-start;
 }

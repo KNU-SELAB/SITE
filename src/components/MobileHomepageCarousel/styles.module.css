@@ -1,0 +1,52 @@
+/* src/components/MobileHomepageCarousel/styles.module.css */
+.carouselSectionMobile {
+  padding: 2rem 0; /* 모바일에서는 상하 여백 줄임 */
+}
+
+.mySwiperMobile {
+  width: 100%;
+  border-radius: 10px; /* 모바일에서는 약간 작은 radius */
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+.swiperSlideMobile {
+  display: flex;
+  flex-direction: column; /* 모바일에서는 수직 정렬이 더 일반적 */
+  align-items: center; /* 가운데 정렬 */
+  justify-content: center; /* 가운데 정렬 */
+  text-align: center;
+  padding: 1.5rem 1rem; /* 모바일용 패딩 */
+  box-sizing: border-box;
+  /* autoHeight={true} 사용 시 min-height는 필수는 아님 */
+  /* min-height: 280px; */
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.slideContentMobile {
+  /* 슬라이드 내용에 대한 추가 스타일링 */
+}
+
+.slideTitleMobile {
+  font-size: 1.5rem; /* 모바일용 타이틀 크기 */
+  font-weight: 600;
+  color: var(--carousel-slide-title-color); /* custom.css 변수 참조 */
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.slideDescriptionMobile {
+  font-size: 0.9rem; /* 모바일용 설명 텍스트 크기 */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--carousel-slide-text-color); /* custom.css 변수 참조 */
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.slideLinkMobile {
+  /* Docusaurus 기본 버튼 스타일 활용 또는 커스텀 */
+  /* 예: color: var(--ifm-button-color); */
+  /* background-color: var(--ifm-button-background-color); */
+  font-weight: 500;
+}

@@ -55,6 +55,43 @@
   --carousel-slide-text-color: var(--ifm-font-color-base);
   --carousel-slide-title-color: var(--knu-deep-blue-text);
   --carousel-slide-border-color: var(--ifm-color-emphasis-300);
+
+
+
+  --info-card-padding-vertical: 1.75rem;
+  --info-card-padding-horizontal: 2rem;
+  --info-card-min-height: 420px; /* 카드 최소 높이 (캐러셀 등에서 일관성 유지용) */
+
+  --info-card-title-font-size: 1.6rem;   /* 예: ProfessorCard의 이름, ProjectCard의 프로젝트명 등 */
+  --info-card-title-font-weight: 700;
+  --info-card-title-color: var(--knu-deep-blue-text);
+  --info-card-title-margin-bottom: 0.75rem;
+
+  --info-card-header-icon-size: 2rem; /* TopicCard, CourseListCard의 헤더 아이콘 */
+  --info-card-header-icon-margin-right: 0.75rem;
+
+  --info-card-subtitle-font-size: 1.05rem; /* 카드 내 작은 섹션 제목들 */
+  --info-card-subtitle-font-weight: 600;
+  --info-card-subtitle-color: var(--ifm-font-color-base);
+  --info-card-subtitle-margin-bottom: 0.5rem;
+
+  --info-card-text-font-size: 0.95rem;
+  --info-card-text-line-height: 1.65;
+  --info-card-text-color: var(--homepage-text-secondary);
+
+  --info-card-list-item-margin-bottom: 0.35rem;
+
+  --info-card-tag-bg: var(--ifm-color-emphasis-100);
+  --info-card-tag-text-color: var(--ifm-color-emphasis-800);
+  --info-card-tag-padding: 0.25rem 0.75rem;
+  --info-card-tag-border-radius: 12px; /* 이전 15px에서 약간 조정 */
+  --info-card-tag-font-size: 0.75rem;
+  --info-card-tag-border: 1px solid var(--ifm-color-emphasis-300);
+
+
+
+  --professor-card-separator-gradient-start: rgba(0, 0, 0, 0.06);
+  --professor-card-separator-gradient-end: rgba(0, 0, 0, 0);
 }
 
 html[data-theme='dark'] {
@@ -98,6 +135,15 @@ html[data-theme='dark'] {
   --carousel-slide-text-color: var(--ifm-font-color-base);
   --carousel-slide-title-color: var(--knu-deep-blue-text);
   --carousel-slide-border-color: var(--ifm-color-emphasis-300);
+
+  --info-card-tag-bg: var(--ifm-color-emphasis-200);
+  --info-card-tag-text-color: var(--ifm-color-emphasis-900);
+  --info-card-tag-border: 1px solid var(--ifm-color-emphasis-400);
+
+
+
+  --professor-card-separator-gradient-start: rgba(255, 255, 255, 0.06);
+  --professor-card-separator-gradient-end: rgba(255, 255, 255, 0);
 }
 
 h1, h2, h3, h4, h5, h6, p, li {

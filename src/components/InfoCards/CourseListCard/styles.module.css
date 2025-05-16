@@ -2,33 +2,49 @@
 .courseListCard {
   background-color: var(--homepage-card-bg);
   border: 1px solid var(--homepage-card-border-color);
-  border-radius: 8px;
-  padding: 1.5rem 2rem; /* 패딩 조정 */
+  border-radius: 12px;
+  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal);
   box-shadow: var(--homepage-card-actual-shadow);
-  color: var(--homepage-text-secondary);
+  color: var(--info-card-text-color);
+  /* min-height: var(--info-card-min-height); */ /* 주석 처리 또는 삭제 */
+  height: 100%; /* 추가: 부모 슬라이드 높이에 맞춤 */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
               border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
               box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
-              color var(--theme-transition-duration) var(--theme-transition-timing-function);
+              color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              transform 0.3s ease-out;
+}
+
+.courseListCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--homepage-card-actual-shadow-hover);
+  border-color: var(--knu-deep-blue-text);
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--info-card-title-margin-bottom);
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  transition: border-bottom-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
 .cardIconHeader {
-  font-size: 2rem;
-  margin-right: 0.75rem;
+  font-size: var(--info-card-header-icon-size);
+  margin-right: var(--info-card-header-icon-margin-right);
   color: var(--homepage-icon-accent-color);
+  line-height: 1;
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
 .cardTitle {
-  color: var(--knu-deep-blue-text);
-  font-size: 1.5rem; /* 타이틀 크기 조정 */
+  color: var(--info-card-title-color);
+  font-size: var(--info-card-title-font-size);
+  font-weight: var(--info-card-title-font-weight);
   margin: 0;
 }
 
@@ -36,46 +52,46 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-grow: 1; /* 이 부분이 중요 */
 }
 
 .courseItem {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+  transition: border-bottom-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 .courseItem:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 .courseItem:first-child {
-  padding-top: 0;
+  padding-top: 0.25rem;
 }
-
 
 .courseInfo {
   display: flex;
-  align-items: baseline; /* 이름과 메타 정보 기준선 맞춤 */
-  flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
   margin-bottom: 0.3rem;
 }
 
 .courseName {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ifm-font-color-base);
-  margin-right: 0.5rem;
+  font-size: var(--info-card-subtitle-font-size); /* 부제목과 스타일 통일 */
+  font-weight: var(--info-card-subtitle-font-weight);
+  color: var(--info-card-subtitle-color);
 }
 
 .courseMeta {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ifm-font-color-secondary);
   white-space: nowrap;
 }
 
 .courseDescription {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: var(--info-card-text-font-size);
+  line-height: var(--info-card-text-line-height);
   margin-bottom: 0.5rem;
-  color: var(--ifm-font-color-secondary);
 }
 
 .syllabusLink {
@@ -83,6 +99,7 @@
   color: var(--ifm-link-color);
   text-decoration: none;
   font-weight: 500;
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 .syllabusLink:hover {
   text-decoration: underline;
