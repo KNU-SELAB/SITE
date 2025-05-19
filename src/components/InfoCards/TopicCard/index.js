@@ -1,43 +1,47 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 
 export default function TopicCard({
-  topicTitle = "소프트웨어 테스팅이란?",
-  icon = "🎯", // 예시 아이콘 (이모지 또는 SVG 컴포넌트)
-  introduction = "소프트웨어 테스팅은 개발된 응용 프로그램 또는 시스템이 사용자의 요구사항을 만족하는지 확인하고, 예상치 못한 결함을 찾아내어 수정하는 과정을 의미합니다. 이는 소프트웨어 품질 보증의 핵심 활동입니다.",
-  keyAspects = [
-    { aspect: "품질 향상", detail: "잠재적 오류를 사전에 발견하여 소프트웨어의 신뢰성과 안정성을 높입니다." },
-    { aspect: "비용 절감", detail: "개발 초기 단계에서 결함을 수정함으로써, 출시 후 발생할 수 있는 더 큰 비용을 예방합니다." },
-    { aspect: "사용자 만족도 증대", detail: "사용자에게 고품질의 제품을 제공하여 긍정적인 경험을 선사합니다." }
-  ],
-  relatedLink, // 예: "/docs/software-testing/introduction"
+  icon = "📄", // 기본 아이콘
+  topicTitle = "주제 제목 없음",
+  summary = "여기에 주제에 대한 요약 내용이 표시됩니다. 이 내용은 마크다운 파일의 첫 번째 H1과 구분선(---) 사이에서 추출된 것으로 가정합니다.",
+  pageLink, // 예: "/docs/my-topic-doc"
 }) {
+  const { withBaseUrl } = useBaseUrlUtils();
+  const summaryContent = summary;
+
   return (
     <div className={styles.topicCard}>
       <div className={styles.topicHeader}>
         {typeof icon === 'string' ? <span className={styles.topicIcon}>{icon}</span> : icon}
-        <h3 className={styles.topicTitle}>{topicTitle}</h3>
+        {pageLink ? (
+          <Link
+            to={pageLink.startsWith('http') ? pageLink : withBaseUrl(pageLink)}
+            className={clsx(styles.topicTitleLink, 'animatedLink')} // 전역 애니메이션 링크 클래스 적용
+          >
+            <h2 className={styles.topicTitleH2}>{topicTitle}</h2>
+          </Link>
+        ) : (
+          <h2 className={styles.topicTitleH2}>{topicTitle}</h2>
+        )}
       </div>
-      <p className={styles.introduction}>{introduction}</p>
 
-      {keyAspects && keyAspects.length > 0 && (
-        <div className={styles.aspectsSection}>
-          <h4 className={styles.aspectsTitle}>핵심 측면</h4>
-          <ul className={styles.aspectsList}>
-            {keyAspects.map((item, index) => (
-              <li key={index} className={styles.aspectItem}>
-                <strong>{item.aspect}:</strong> {item.detail}
-              </li>
-            ))}
-          </ul>
+      {/* 본문 내용 (summary) */}
+      {summary && (
+        <div className={styles.topicSummary}>
+          {/* summary가 단순 텍스트일 경우 p태그로 감싸거나,
+              HTML 문자열일 경우 dangerouslySetInnerHTML 사용 (주의 필요),
+              Markdown 문자열일 경우 react-markdown 등 라이브러리 사용 필요.
+              여기서는 단순 텍스트 또는 미리 처리된 HTML로 가정하고 div에 넣습니다.
+              가장 간단하게는 CSS에서 white-space: pre-line; 를 사용하여 줄바꿈을 인식하게 할 수 있습니다.
+          */}
+          {summaryContent}
         </div>
       )}
-      {relatedLink && (
-         <Link to={relatedLink} className={`button button--sm button--secondary ${styles.topicLinkButton}`}>
-            자세히 알아보기
-          </Link>
-      )}
+      {/* "더 알아보기" 버튼은 제목이 링크 역할을 하므로 제거됨 */}
     </div>
   );
 }

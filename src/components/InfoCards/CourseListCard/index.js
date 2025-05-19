@@ -15,7 +15,7 @@ export default function CourseListCard({
     <div className={styles.courseListCard}>
       <div className={styles.cardHeader}>
         {typeof icon === 'string' ? <span className={styles.cardIconHeader}>{icon}</span> : icon}
-        <h3 className={styles.cardTitle}>{title}</h3>
+        <h2 className={styles.cardTitle}>{title}</h2>
       </div>
       {courses && courses.length > 0 ? (
         <ul className={styles.courseList}>

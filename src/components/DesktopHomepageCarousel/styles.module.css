@@ -13,8 +13,7 @@
   display: flex;
   align-items: stretch; /* 변경: 자식 요소(카드)가 슬라이드 높이를 채우도록 함 */
   justify-content: center;
-  min-height: 550px; /* 변경: 모든 카드가 가질 최소 높이 (내용에 따라 조절) */
-  padding: 1.5rem; /* 슬라이드와 카드 사이의 여백 (필요시 조절) */
+  min-height: 700px; /* 변경: 모든 카드가 가질 최소 높이 (내용에 따라 조절) */
   box-sizing: border-box;
   background-color: transparent;
 }

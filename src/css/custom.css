@@ -13,6 +13,8 @@
   font-display: swap; 
   src: url(https://fonts.gstatic.com/s/librebarcode39text/v25/sJoa3KhViNKANw_E3LwoDXM_HcfDM2R704c4xN16Fw.woff2) format('woff2'); 
 }
+
+
 :root {
   /* 라이트 모드 변수 */
   --knu-deep-blue-bg: #003366;                 /* KNU 딥블루 (배경용) */
@@ -58,24 +60,23 @@
 
 
 
-  --info-card-padding-vertical: 1.75rem;
-  --info-card-padding-horizontal: 2rem;
-  --info-card-min-height: 420px; /* 카드 최소 높이 (캐러셀 등에서 일관성 유지용) */
+  --info-card-padding-vertical: 3rem;
+  --info-card-padding-horizontal: 4rem;
 
-  --info-card-title-font-size: 1.6rem;   /* 예: ProfessorCard의 이름, ProjectCard의 프로젝트명 등 */
-  --info-card-title-font-weight: 700;
+  --info-card-title-font-size: 2.0rem;   /* 예: ProfessorCard의 이름, ProjectCard의 프로젝트명 등 */
+  --info-card-title-font-weight: 900;
   --info-card-title-color: var(--knu-deep-blue-text);
   --info-card-title-margin-bottom: 0.75rem;
 
   --info-card-header-icon-size: 2rem; /* TopicCard, CourseListCard의 헤더 아이콘 */
   --info-card-header-icon-margin-right: 0.75rem;
 
-  --info-card-subtitle-font-size: 1.05rem; /* 카드 내 작은 섹션 제목들 */
+  --info-card-subtitle-font-size: 1.25rem; /* 카드 내 작은 섹션 제목들 */
   --info-card-subtitle-font-weight: 600;
   --info-card-subtitle-color: var(--ifm-font-color-base);
   --info-card-subtitle-margin-bottom: 0.5rem;
 
-  --info-card-text-font-size: 0.95rem;
+  --info-card-text-font-size: 1.05rem;
   --info-card-text-line-height: 1.65;
   --info-card-text-color: var(--homepage-text-secondary);
 
@@ -88,10 +89,30 @@
   --info-card-tag-font-size: 0.75rem;
   --info-card-tag-border: 1px solid var(--ifm-color-emphasis-300);
 
-
-
   --professor-card-separator-gradient-start: rgba(0, 0, 0, 0.06);
   --professor-card-separator-gradient-end: rgba(0, 0, 0, 0);
+
+
+
+  /* ProjectCard 스타일 변수 (라이트 모드) */
+  --project-card-overlay-bg: rgba(255, 255, 255, 0.5); /* 변경: 이전 0.75에서 0.55로 투명도 증가 (덜 진하게) */
+  --project-card-text-color-on-overlay: #FFFFFF;
+  --project-card-title-color-on-overlay: #FFFFFF;
+  --project-card-secondary-text-color-on-overlay: rgba(255, 255, 255, 0.85);
+  --project-card-text-shadow-on-overlay: 0 1px 3px rgba(255, 255, 255, 0.4); /* 텍스트 그림자 추가 */
+
+  /* ProjectCard 내부 태그/뱃지 스타일 (오버레이 위) - 이전과 동일 또는 미세 조정 */
+  --project-card-tag-bg-on-overlay: rgba(255, 255, 255, 0.15);
+  --project-card-tag-text-on-overlay: rgba(255, 255, 255, 0.9);
+  --project-card-tag-border-on-overlay: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* ProjectCard 상태 뱃지 - 이전과 동일 또는 미세 조정 */
+  --project-card-status-Ongoing-bg: rgba(40, 167, 69, 0.8);
+  --project-card-status-Ongoing-text: #FFFFFF;
+  --project-card-status-Completed-bg: rgba(0, 123, 255, 0.8);
+  --project-card-status-Completed-text: #FFFFFF;
+  --project-card-status-Default-bg: rgba(108, 117, 125, 0.8);
+  --project-card-status-Default-text: #FFFFFF;
 }
 
 html[data-theme='dark'] {
@@ -144,8 +165,29 @@ html[data-theme='dark'] {
 
   --professor-card-separator-gradient-start: rgba(255, 255, 255, 0.06);
   --professor-card-separator-gradient-end: rgba(255, 255, 255, 0);
-}
 
+
+   /* ProjectCard 스타일 변수 (다크 모드) */
+  --project-card-overlay-bg: rgba(0, 0, 0, 0.5); /* 변경: 이전 0.85에서 0.65로 투명도 증가 (덜 진하게) */
+  --project-card-text-color-on-overlay: #E0E0E0;
+  --project-card-title-color-on-overlay: #FFFFFF;
+  --project-card-secondary-text-color-on-overlay: rgba(224, 224, 224, 0.85);
+  --project-card-text-shadow-on-overlay: 0 1px 2px rgba(0, 0, 0, 0.7); /* 어두운 배경 위 밝은 글씨에 대한 그림자 */
+
+
+  /* ProjectCard 내부 태그/뱃지 스타일 (오버레이 위, 다크모드) - 이전과 동일 또는 미세 조정 */
+  --project-card-tag-bg-on-overlay: rgba(255, 255, 255, 0.1);
+  --project-card-tag-text-on-overlay: rgba(255, 255, 255, 0.85);
+  --project-card-tag-border-on-overlay: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* ProjectCard 상태 뱃지 (다크모드) - 이전과 동일 또는 미세 조정 */
+  --project-card-status-Ongoing-bg: rgba(40, 167, 69, 0.9);
+  --project-card-status-Ongoing-text: #FFFFFF;
+  --project-card-status-Completed-bg: rgba(0, 123, 255, 0.9);
+  --project-card-status-Completed-text: #FFFFFF;
+  --project-card-status-Default-bg: rgba(108, 117, 125, 0.9);
+  --project-card-status-Default-text: #FFFFFF;
+}
 h1, h2, h3, h4, h5, h6, p, li {
   transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
@@ -158,5 +200,110 @@ h1, h2, h3, h4, h5, h6, p, li {
 .swiper-pagination-bullet-active {
    background: var(--swiper-pagination-color) !important;
 }
+.navbar__items{
+  text-align: center;
+}
+.stlab-logo{
+  justify-content: center;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 1.7em;
+}
 
 
+/* ProjectCard의 제목 링크는 특별한 배경 위에 있으므로 별도 스타일링 필요 */
+/* .project-card-title-link 와 같은 클래스에 아래 스타일 적용 */
+.projectCardTitleLink { /* 이 클래스를 ProjectCard의 제목 Link에 적용 */
+  font-weight: bold; /* 동일하게 bold */
+  text-decoration: none;
+  position: relative;
+  color: var(--project-card-title-color-on-overlay); /* 오버레이 위 제목 색상 */
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function),
+              filter 0.2s ease-in-out;
+}
+.projectCardTitleLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--project-card-title-color-on-overlay); /* 오버레이 위 제목 색상 */
+  transition: width 0.3s ease-out, background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transform-origin: right;
+}
+.projectCardTitleLink:hover {
+  /* color: var(--project-card-title-color-on-overlay); */ /* 색상 변경은 filter로 대체 */
+  filter: brightness(1.2);
+}
+.projectCardTitleLink:hover::after {
+  width: 100%;
+  left: 0;
+  transform-origin: left;
+  /* background-color: var(--project-card-title-color-on-overlay); */ /* 호버시 밑줄 색 변경은 선택 */
+}
+
+.animatedLink {
+  font-weight: bold !important; /* 요청사항: 기본적으로 bold 처리 (필요시 !important) */
+  text-decoration: none !important; /* 기본 밑줄 제거 (필요시 !important) */
+  position: relative; /* ::after 가상 요소의 기준점 */
+  color: var(--ifm-link-color); /* Docusaurus 기본 링크 색상 사용 */
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.animatedLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* 밑줄 위치 (텍스트와의 간격). 폰트 크기에 따라 조절 가능 */
+  right: 0;     /* 오른쪽에서 애니메이션 시작 */
+  width: 0;     /* 초기 너비 0 */
+  height: 1.5px;/* 밑줄 두께 */
+  background-color: currentColor; /* 중요: 링크 텍스트의 현재 색상을 밑줄 색으로 사용 */
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), /* 너비 애니메이션 타이밍 조정 */
+              background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transform-origin: right; /* 오른쪽에서 왼쪽으로 그려지는 효과 */
+}
+
+.animatedLink:hover {
+  color: var(--ifm-link-hover-color); /* Docusaurus 기본 링크 호버 색상 */
+  /* text-decoration: none; 이미 설정됨 */
+}
+
+.animatedLink:hover::after {
+  width: 100%;  /* 전체 너비로 확장 */
+  left: 0;      /* 왼쪽으로 확장되도록 */
+  transform-origin: left; /* 채워지는 방향 일관성 유지 */
+  background-color: currentColor;
+}
+
+
+.footer__link-item {
+  font-weight: bold !important; /* 요청사항: 기본적으로 bold 처리 (필요시 !important) */
+  text-decoration: none !important; /* 기본 밑줄 제거 (필요시 !important) */
+  position: relative; /* ::after 가상 요소의 기준점 */
+  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
+}
+
+.footer__link-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* 밑줄 위치 (텍스트와의 간격). 폰트 크기에 따라 조절 가능 */
+  right: 0;     /* 오른쪽에서 애니메이션 시작 */
+  width: 0;     /* 초기 너비 0 */
+  height: 1.5px;/* 밑줄 두께 */
+  background-color: currentColor; /* 중요: 링크 텍스트의 현재 색상을 밑줄 색으로 사용 */
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), /* 너비 애니메이션 타이밍 조정 */
+              background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transform-origin: right; /* 오른쪽에서 왼쪽으로 그려지는 효과 */
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-link-hover-color); /* Docusaurus 기본 링크 호버 색상 */
+  /* text-decoration: none; 이미 설정됨 */
+}
+
+.footer__link-item:hover::after {
+  width: 100%;  /* 전체 너비로 확장 */
+  left: 0;      /* 왼쪽으로 확장되도록 */
+  transform-origin: left; /* 채워지는 방향 일관성 유지 */
+  background-color: currentColor;
+}

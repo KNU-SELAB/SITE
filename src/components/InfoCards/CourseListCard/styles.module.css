@@ -1,27 +1,20 @@
 /* src/components/InfoCards/CourseListCard/styles.module.css */
 .courseListCard {
-  background-color: var(--homepage-card-bg);
-  border: 1px solid var(--homepage-card-border-color);
-  border-radius: 12px;
-  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal);
-  box-shadow: var(--homepage-card-actual-shadow);
+  background-color: var(white);/*--homepage-card-bg*/
   color: var(--info-card-text-color);
-  /* min-height: var(--info-card-min-height); */ /* 주석 처리 또는 삭제 */
-  height: 100%; /* 추가: 부모 슬라이드 높이에 맞춤 */
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal);
+  overflow-y: auto;
+  border: 1px solid var(--homepage-card-border-color);
+  border-radius: 12px;
+  box-shadow: var(--homepage-card-actual-shadow);
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
-              border-color var(--theme-transition-duration) var(--theme-transition-timing-function),
-              box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
               color var(--theme-transition-duration) var(--theme-transition-timing-function),
-              transform 0.3s ease-out;
-}
-
-.courseListCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--homepage-card-actual-shadow-hover);
-  border-color: var(--knu-deep-blue-text);
+              transform 0.3s ease-out,
+              box-shadow var(--theme-transition-duration) var(--theme-transition-timing-function),
+              border-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
 .cardHeader {
@@ -48,21 +41,27 @@
   margin: 0;
 }
 
-.courseList {
+.courseList { /* ul 태그 */
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* 이 부분이 중요 */
+  flex-grow: 1; /* 중요: 이 목록 영역이 남은 공간을 채움 */
+  display: flex; /* 내부 li들이 수직 공간을 나누어 갖도록 하려면 (선택적) */
+  flex-direction: column;
 }
 
-.courseItem {
+.courseItem { /* li 태그 */
   padding: 0.75rem 0;
   border-bottom: 1px dashed var(--ifm-color-emphasis-200);
   transition: border-bottom-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  /* 만약 .courseList가 flex container면, .courseItem에 flex-grow:1을 주면 각 항목이 공간을 균등히 나눔.
+     하지만 보통은 내용만큼의 높이를 가지는게 자연스러움.
+     .courseList에 flex-grow:1을 주었으므로, 이 li들은 그 안에서 자연스럽게 쌓임. */
 }
 .courseItem:last-child {
   border-bottom: none;
   padding-bottom: 0;
+  /* flex-grow:1; */ /* 만약 마지막 아이템이 남은 공간을 모두 채우길 원한다면 */
 }
 .courseItem:first-child {
   padding-top: 0.25rem;
@@ -77,7 +76,7 @@
 }
 
 .courseName {
-  font-size: var(--info-card-subtitle-font-size); /* 부제목과 스타일 통일 */
+  font-size: var(--info-card-subtitle-font-size);
   font-weight: var(--info-card-subtitle-font-weight);
   color: var(--info-card-subtitle-color);
 }

@@ -1,56 +1,78 @@
+// src/components/InfoCards/ProjectCard/index.js
 import React from 'react';
 import styles from './styles.module.css';
-import Link from '@docusaurus/Link';
+import clsx from 'clsx';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link'; // 제목 링크를 위해 Docusaurus Link 사용
 
 export default function ProjectCard({
-  projectName = "AI 기반 테스트 케이스 자동 생성 시스템 개발",
-  status = "진행중", // "완료", "제안중" 등
-  period = "2024.03 ~ 2026.02",
-  description = "머신러닝 모델을 활용하여 소프트웨어 변경 사항에 따라 최적의 테스트 케이스를 자동으로 생성하고 우선순위를 부여하는 시스템을 개발합니다.",
-  fundingSource, // 예: "정보통신기획평가원(IITP)"
-  technologies = ["Python", "TensorFlow", "React", "Docker"],
-  imageUrl, // 예: "/img/projects/project_ai_testing.jpg"
-  projectLink, // 예: "/docs/projects/ai-testing"
+  projectName = "제목 없는 과제",
+  status = "Default",
+  period = "기간 정보 없음",
+  description = "과제에 대한 설명이 여기에 표시됩니다.",
+  fundingSources = [],
+  technologies = [],
+  imageUrl,
+  projectLink, // 제목에 사용될 링크
 }) {
-  const getStatusClass = (currentStatus) => {
-    if (currentStatus === "진행중") return styles.statusOngoing;
-    if (currentStatus === "완료") return styles.statusCompleted;
-    return styles.statusDefault;
-  };
+  const { withBaseUrl } = useBaseUrlUtils();
+
+  const cardStyleWithImage = (imageUrl && typeof imageUrl === 'string' && imageUrl.trim() !== '')
+    ? { backgroundImage: `url(${withBaseUrl(imageUrl)})` }
+    : {};
+
+  const statusClassName = styles[`status${status}`] || styles.statusDefault;
 
   return (
-    <div className={styles.projectCard}>
-      {imageUrl && (
-        <div className={styles.projectImageContainer}>
-          <img src={imageUrl} alt={`${projectName} 이미지`} className={styles.projectImage} />
+    <div className={clsx(styles.projectCard)} style={cardStyleWithImage}>
+      <div className={styles.contentOverlay}>
+        <div className={styles.header} >
+          {projectName && (
+            projectLink ? (
+              <Link // 제목을 Docusaurus Link로 변경
+                to={projectLink.startsWith('http') ? projectLink : withBaseUrl(projectLink)}
+                className={styles.projectNameLink} // 링크 스타일 적용
+              >
+                <h2 className={styles.projectNameH2}>{projectName}</h2> {/* 스타일 일관성을 위해 내부 h2에 별도 클래스 또는 태그 직접 사용 */}
+              </Link>
+            ) : (
+              <h2 className={styles.projectNameH2}>{projectName}</h2>
+            )
+          )}
+          {status && <span className={clsx(styles.statusBadge, statusClassName)}>{status}</span>}
         </div>
-      )}
-      <div className={styles.projectContent}>
-        <div className={styles.header}>
-          <h3 className={styles.projectName}>{projectName}</h3>
-          {status && <span className={`${styles.statusBadge} ${getStatusClass(status)}`}>{status}</span>}
-        </div>
-        <p className={styles.period}>{period}</p>
-        <p className={styles.description}>{description}</p>
 
-        {fundingSource && (
-          <p className={styles.funding}><strong>지원 기관:</strong> {fundingSource}</p>
+        {period && <p className={styles.period}>{period}</p>}
+        {description && <p className={styles.description}>{description}</p>}
+
+        {fundingSources && fundingSources.length > 0 && (
+          <p className={styles.funding}>
+            <strong>지원 기관:</strong>{' '}
+            {fundingSources.map((source, index) => (
+              <React.Fragment key={source.name}>
+                <a
+                  href={source.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="animatedLink"
+                >
+                  {source.name}
+                </a>
+                {index < fundingSources.length - 1 && ', '}
+              </React.Fragment>
+            ))}
+          </p>
         )}
 
         {technologies && technologies.length > 0 && (
           <div className={styles.techStack}>
-            <strong>주요 기술:</strong>
+            <strong className={styles.techStackTitle}>주요 기술:</strong>
             <div className={styles.tags}>
               {technologies.map((tech, index) => (
                 <span key={index} className={styles.tag}>{tech}</span>
               ))}
             </div>
           </div>
-        )}
-        {projectLink && (
-          <Link to={projectLink} className={`button button--outline button--sm button--primary ${styles.projectLinkButton}`}>
-            과제 상세 보기
-          </Link>
         )}
       </div>
     </div>

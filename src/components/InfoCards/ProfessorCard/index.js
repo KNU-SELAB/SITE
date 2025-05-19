@@ -1,10 +1,8 @@
-// src/components/InfoCards/ProfessorCard/index.js
-import React, { useState } from 'react'; // useState import
+import React from 'react'; // useState 제거
 import styles from './styles.module.css';
-// Link 컴포넌트는 더 이상 카드 전체를 감싸지 않으므로, 필요시 내부 링크에만 사용
-// import Link from '@docusaurus/Link';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
-import { useBaseUrlUtils } from '@docusaurus/useBaseUrl'; // Docusaurus 유틸리티
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 
 export default function ProfessorCard({
   name = "김연구 교수님",
@@ -23,13 +21,12 @@ export default function ProfessorCard({
     "AI 기반 소프트웨어 공학",
     "임베디드 시스템 분석"
   ],
-  labPageLink, // 이 링크를 더블 클릭 시 사용
+  labPageLink,
 }) {
-  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-  const { withBaseUrl } = useBaseUrlUtils();
+  const { withBaseUrl } = useBaseUrlUtils(); // labPageLink가 상대 경로일 경우를 위해 유지
 
   const photoAreaStyle = photoUrl
-    ? { backgroundImage: `url(${photoUrl})` }
+    ? { backgroundImage: `url(${photoUrl.startsWith('http') ? photoUrl : withBaseUrl(photoUrl)})` } // 외부/내부 URL 처리
     : {
         backgroundImage: 'none',
         backgroundColor: 'var(--ifm-color-emphasis-200)',
@@ -39,41 +36,9 @@ export default function ProfessorCard({
         color: 'var(--ifm-color-emphasis-700)'
       };
 
-  const handleSingleClick = () => {
-    if (labPageLink) { // 링크가 있을 때만 오버레이 토글
-      setIsOverlayVisible(!isOverlayVisible);
-    }
-  };
-
-  const handleDoubleClick = () => {
-    if (labPageLink) {
-      // 외부 링크인지 내부 링크인지 간단히 확인
-      if (labPageLink.startsWith('http://') || labPageLink.startsWith('https://') || labPageLink.startsWith('//')) {
-        window.location.href = labPageLink; // 새 창에서 열고 싶으면 window.open(labPageLink, '_blank');
-      } else {
-        window.location.href = withBaseUrl(labPageLink); // SPA 라우팅을 원하면 useHistory 사용 고려
-      }
-    }
-  };
-
   return (
-    <div
-      className={clsx(
-        styles.professorCard,
-        labPageLink && styles.clickableCard, // 링크가 있을 때만 clickable 스타일 적용
-        isOverlayVisible && styles.overlayActive // 오버레이 활성 상태 클래스
-      )}
-      onClick={handleSingleClick}
-      onDoubleClick={handleDoubleClick}
-      role={labPageLink ? "button" : "article"} // 링크가 있으면 버튼 역할, 없으면 일반 article
-      tabIndex={labPageLink ? 0 : -1} // 링크가 있으면 키보드 접근 가능
-      onKeyDown={(e) => { // Enter 키로도 클릭 효과 (접근성)
-        if (labPageLink && (e.key === 'Enter' || e.key === ' ')) {
-          e.preventDefault();
-          handleSingleClick();
-        }
-      }}
-    >
+    // clickableCard 클래스 및 클릭/더블클릭 핸들러 제거
+    <div className={styles.professorCard}>
       <div
         className={styles.photoArea}
         style={photoAreaStyle}
@@ -83,12 +48,25 @@ export default function ProfessorCard({
       </div>
 
       <div className={styles.infoSection}>
-        <h3 className={styles.name}>{name}</h3>
+        <h2 className={styles.name}>{name}</h2>
         <p className={styles.title}>{title}</p>
         <div className={styles.contactInfo}>
-          {email && <p>📧 <a href={`mailto:${email}`} onClick={(e) => e.stopPropagation()}>{email}</a></p>}
+          {email && <p>📧 <a href={`mailto:${email}`} class="animatedLink">{email}</a></p>}
           {office && <p>🏢 {office}</p>}
+          {labPageLink && (
+          <div className={styles.labLinkButtonContainer}>
+            <Link
+              className={clsx('button button--primary button--sm', styles.labLinkButton)}
+              to={labPageLink.startsWith('http') ? labPageLink : withBaseUrl(labPageLink)}
+            >
+              연구실 구성원 확인하기
+            </Link>
+          </div>
+        )}
         </div>
+
+        {/* "연구실 구성원 확인하기" 버튼 추가 */}
+        
 
         {education && education.length > 0 && (
           <div className={styles.detailSection}>
@@ -106,19 +84,13 @@ export default function ProfessorCard({
             <h4 className={styles.detailTitle}>주요 연구 분야</h4>
             <ul className={styles.interestsList}>
               {researchInterests.map((interest, index) => (
-                <li key={index} className={styles.interestItem}>{interest}</li>
+                <li key={index}>{interest}</li> // .interestItem 클래스 제거 또는 기본 li 스타일로 통합
               ))}
             </ul>
           </div>
         )}
       </div>
-
-      {/* 오버레이 텍스트 (isOverlayVisible 상태에 따라 CSS로 제어됨) */}
-      {labPageLink && (
-        <div className={styles.hoverLinkTextContainer}>
-          <span className={styles.hoverLinkText}>더블 클릭하여 연구실 구성원 확인하기</span>
-        </div>
-      )}
+      {/* 호버 오버레이 관련 JSX 제거됨 */}
     </div>
   );
 }

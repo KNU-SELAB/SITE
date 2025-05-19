@@ -1,0 +1,10 @@
+/* src/components/ThemeLogo/styles.module.css */
+.logoContainer {
+  display: inline-block; /* 또는 block, flex 등 레이아웃에 맞게 */
+  line-height: 1; /* SVG 주변 불필요한 공백 제거 */
+}
+
+.logoSvg {
+  display: block; /* 이미지처럼 취급 */
+  /* width, height는 props로 전달받아 인라인 스타일로 적용됨 */
+}

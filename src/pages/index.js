@@ -7,6 +7,7 @@ import styles from './index.module.css';
 import DesktopHomepageCarousel from '@site/src/components/DesktopHomepageCarousel';
 import MobileHomepageCarousel from '@site/src/components/MobileHomepageCarousel'; // 새로 추가
 import { useViewportSize } from '@site/src/hooks/useViewportSize';
+import ThemeLogo from '@site/src/components/ThemeLogo';
 
 const MOBILE_BREAKPOINT = 768; // 모바일로 간주할 너비 기준 (예: 768px 이하)
 
@@ -193,8 +194,8 @@ export default function Home() {
       <HomepageHeader />
       <main>
         {isClient? (isMobile ? <MobileHomepageCarousel /> : <DesktopHomepageCarousel />) : (<div style={{ minHeight: '400px' }} />)}
-        <ResearchAreaSection />
-        <RelatedTechnologiesSection />
+        {/* <ResearchAreaSection /> */}
+        {/* <RelatedTechnologiesSection /> */}
       </main>
     </Layout>
   );
