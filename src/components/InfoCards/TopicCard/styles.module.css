@@ -20,11 +20,6 @@
               border-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
-.topicCard:hover {
-  transform: translateY(-3px); /* 미세한 호버 효과 */
-  box-shadow: var(--homepage-card-actual-shadow-hover);
-}
-
 .topicHeader {
   display: flex;
   align-items: center; /* 아이콘과 제목 수직 정렬 */

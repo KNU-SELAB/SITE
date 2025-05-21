@@ -11,24 +11,24 @@ import Link from '@docusaurus/Link';
 // 여기서는 간단한 텍스트 기반 슬라이드를 예시로 합니다.
 const mobileCarouselItems = [
   {
-    id: 'mobile-intro',
-    title: 'SW 테스팅 핵심 연구',
-    description: '경북대학교 소프트웨어 테스팅 연구실입니다. AI와 정형 분석 기반의 혁신적인 테스팅 기술을 연구합니다.',
+    id: 'professor',
+    title: '이우진 교수님',
+    description: '교수님 소개 페이지로 이동합니다.',
     link: '/lab-introduction',
     backgroundColor: 'var(--ifm-color-primary-lightest)',
   },
   {
-    id: 'mobile-research',
-    title: '주요 연구 프로젝트',
-    description: '차세대 모빌리티, 지능형 시스템을 위한 신뢰성 높은 소프트웨어 검증 플랫폼을 개발하고 있습니다.',
+    id: 'course',
+    title: '주요 실적',
+    description: '진행한 강의들을 ',
     link: '/projects',
     backgroundColor: 'var(--ifm-color-secondary-lightest)',
   },
   {
-    id: 'mobile-join',
-    title: '연구원 모집',
-    description: '테스팅 분야에 열정 있는 학부생, 대학원생 연구원을 기다립니다. 함께 성장할 기회!',
-    link: '/join',
+    id: 'project',
+    title: '진행중인 프로젝트',
+    description: '현재 진행중인 프로젝트를 확인합니다.',
+    link: '/docs/Project',
     backgroundColor: 'var(--ifm-color-success-lightest)',
   }
 ];

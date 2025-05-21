@@ -51,7 +51,7 @@ export default function ProfessorCard({
         <h2 className={styles.name}>{name}</h2>
         <p className={styles.title}>{title}</p>
         <div className={styles.contactInfo}>
-          {email && <p>📧 <a href={`mailto:${email}`} class="animatedLink">{email}</a></p>}
+          {email && <p>📧 <a href={`mailto:${email}`} className={clsx('animatedLink')}>{email}</a></p>}
           {office && <p>🏢 {office}</p>}
           {labPageLink && (
           <div className={styles.labLinkButtonContainer}>

@@ -69,15 +69,10 @@ const carouselItems = [
     id: 'professor-courses',
     type: 'courses',
     props: {
-      title: "최근 담당 강의",
+      title: "최근 담당 강좌 및 세미나",
+    boardLink: '/projects/intelligent-mobility-platform',
       icon: "📖",
-      courses: [
-        { name: "소프트웨어 테스팅 및 품질보증", code: "SWE4010", level: "학부 4학년", description: "다양한 테스팅 기법과 품질 관리 표준을 학습하고, 실제 프로젝트에 적용하는 실습을 진행합니다." },
-        { name: "인공지능 기반 소프트웨어 공학", code: "CSE7001", level: "대학원", description: "AI 기술을 소프트웨어 개발 및 테스팅 프로세스에 적용하는 최신 연구 동향과 방법론을 다룹니다." },
-        { name: "정형 분석 및 모델 체킹", code: "CSE6033", level: "대학원 석박사", description: "소프트웨어의 정확성과 안전성을 수학적으로 증명하는 정형 기법과 모델 체킹 도구를 학습합니다." },
-        { name: "정형 분석 및 모델 체킹", code: "CSE6033", level: "대학원 석박사", description: "소프트웨어의 정확성과 안전성을 수학적으로 증명하는 정형 기법과 모델 체킹 도구를 학습합니다." },
-        { name: "정형 분석 및 모델 체킹", code: "CSE6033", level: "대학원 석박사", description: "소프트웨어의 정확성과 안전성을 수학적으로 증명하는 정형 기법과 모델 체킹 도구를 학습합니다." },
-      ]
+      seeMoreLink: "/"
     }
   }
 ];

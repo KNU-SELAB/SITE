@@ -113,6 +113,14 @@
   --project-card-status-Completed-text: #FFFFFF;
   --project-card-status-Default-bg: rgba(108, 117, 125, 0.8);
   --project-card-status-Default-text: #FFFFFF;
+
+
+  --ifm-footer-background-color: var(--knu-deep-blue-bg);
+  --ifm-footer-title-color: var(--homepage-hero-title-text);
+  --ifm-footer-link-color: var(--homepage-hero-subtitle-text);
+  --ifm-navbar-link-hover-color: var(--knu-bright-blue-accent);
+  --ifm-footer-color: var(--homepage-hero-title-text);
+  --ifm-link-color: var(--knu-bright-blue-accent);
 }
 
 html[data-theme='dark'] {
@@ -187,11 +195,20 @@ html[data-theme='dark'] {
   --project-card-status-Completed-text: #FFFFFF;
   --project-card-status-Default-bg: rgba(108, 117, 125, 0.9);
   --project-card-status-Default-text: #FFFFFF;
+
+  
+  --ifm-footer-background-color: var(--knu-deep-blue-bg);
+  --ifm-footer-title-color: var(--homepage-hero-title-text);
+  --ifm-footer-link-color: var(--homepage-hero-subtitle-text);
+  --ifm-navbar-link-hover-color: var(--knu-bright-blue-accent);
+  --ifm-link-color: var(--knu-bright-blue-accent);
 }
 h1, h2, h3, h4, h5, h6, p, li {
   transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
-
+.footer__copyright{
+  font-weight: 900;
+}
 .swiper-button-next,
 .swiper-button-prev {
   font-size: 1.5rem;
@@ -206,9 +223,11 @@ h1, h2, h3, h4, h5, h6, p, li {
 .stlab-logo{
   justify-content: center;
   font-family: 'Libre Barcode 39 Text';
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
-
+.navbar__link{
+  font-weight: 800;
+}
 
 /* ProjectCard의 제목 링크는 특별한 배경 위에 있으므로 별도 스타일링 필요 */
 /* .project-card-title-link 와 같은 클래스에 아래 스타일 적용 */
@@ -247,7 +266,6 @@ h1, h2, h3, h4, h5, h6, p, li {
   text-decoration: none !important; /* 기본 밑줄 제거 (필요시 !important) */
   position: relative; /* ::after 가상 요소의 기준점 */
   color: var(--ifm-link-color); /* Docusaurus 기본 링크 색상 사용 */
-  transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
 .animatedLink::after {
@@ -258,8 +276,7 @@ h1, h2, h3, h4, h5, h6, p, li {
   width: 0;     /* 초기 너비 0 */
   height: 1.5px;/* 밑줄 두께 */
   background-color: currentColor; /* 중요: 링크 텍스트의 현재 색상을 밑줄 색으로 사용 */
-  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), /* 너비 애니메이션 타이밍 조정 */
-              background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform-origin: right; /* 오른쪽에서 왼쪽으로 그려지는 효과 */
 }
 
