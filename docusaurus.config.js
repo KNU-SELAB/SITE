@@ -60,7 +60,7 @@ const config = {
       '@docusaurus/plugin-content-blog',
       {
         id:'Domestic-Conference',
-        routeBasePath:'Domestic-Conference',
+        routeBasePath:'Conference/Domestic',
         path:'./list/domestic-conference',
         blogTitle:'국내 학술대회',
         blogDescription:'국내 학술대회 관련',
@@ -77,7 +77,7 @@ const config = {
       '@docusaurus/plugin-content-blog',
       {
         id:'International-Conference',
-        routeBasePath:'International-Conference',
+        routeBasePath:'Conference/International',
         path:'./list/international-conference',
         blogTitle:'국제 학술대회',
         blogDescription:'국제 학술대회 관련',
@@ -94,7 +94,7 @@ const config = {
       '@docusaurus/plugin-content-blog',
       {
         id:'Domestic-Journal',
-        routeBasePath:'Domestic-Journal',
+        routeBasePath:'Journal/Domestic',
         path:'./list/domestic-journal',
         blogTitle:'국내 저널',
         blogDescription:'국내 저널 관련',
@@ -111,7 +111,7 @@ const config = {
       '@docusaurus/plugin-content-blog',
       {
         id:'International-Journal',
-        routeBasePath:'International-Journal',
+        routeBasePath:'Journal/International',
         path:'./list/international-journal',
         blogTitle:'국제 저널',
         blogDescription:'국제 저널 관련',
@@ -149,7 +149,7 @@ const config = {
         path:'./list/course',
         blogTitle:'강의',
         blogDescription:'강의 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:'ALL',
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -184,41 +184,55 @@ const config = {
         style: 'light',
         links: [
           {
-            title: 'Docs',
+            title: 'Conference',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Domestic',
+                to: '/Conference/Domestic',
+              },{
+                label: 'International',
+                to: '/Conference/Domestic',
+              },
+            ],
+          },{
+            title: 'Journal',
+            items: [
+              {
+                label: 'Domestic',
+                to: '/Journal/Domestic',
+              },{
+                label: 'International',
+                to: '/Journal/International',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'About Us',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Course',
+                label: 'Courses',
                 to: '/Course',
               },
               {
-                label: 'GitHub',
+                label: 'Github',
                 href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'Professor',
+                href: 'http://gscse.knu.ac.kr/bbs/board.php?bo_table=sub2_1&wr_id=21',
+              },
+            ],
+          },
+          {
+            title: 'Contact Us',
+            items: [
+              {
+                label: 'Mail to Lab. Manager',
+                href: 'mailto:labmanager@gmail.com',
+              },
+              {
+                label: 'Mail to Professor',
+                href: 'Mailto:professor@gmail.com',
               },
             ],
           },
