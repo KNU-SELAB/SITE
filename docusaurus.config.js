@@ -15,14 +15,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://github.com/KNU-STLAB',
+  url: 'https://KNU-STLAB.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/SITE/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'STLAB', // Usually your GitHub org/user name.
+  organizationName: 'KNU-STLAB', // Usually your GitHub org/user name.
   projectName: 'SITE', // Usually your repo name.
 
   onBrokenLinks: 'throw',
