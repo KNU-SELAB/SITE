@@ -1,7 +1,7 @@
 ---
 slug: "Integration Testing Approach using Usage Patterns of Global Variables"
 title: "Integration Testing Approach using Usage Patterns of Global Variables"
-authors: [Muhammad Iqbal Hossain, Youngsul Shin, Woo Jin Lee]
+authors: [후세인무하메드입팔, 신영술, 이우진]
 date: 2012-04-27
 ---
 

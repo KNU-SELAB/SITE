@@ -1,7 +1,7 @@
 ---
 slug: "안드로이드 어플리케이션의 필드 Capture and Replay 방식의 설계"
 title: "안드로이드 어플리케이션의 필드 Capture and Replay 방식의 설계"
-authors: [아자이쿠마르자, 백태산, 이우진]
+authors: [아제이쿠마르차, 백태산, 이우진]
 date: 2012-12-07
 ---
 

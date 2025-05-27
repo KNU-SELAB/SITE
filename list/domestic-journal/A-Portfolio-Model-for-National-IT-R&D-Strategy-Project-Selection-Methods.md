@@ -1,7 +1,7 @@
 ---
 slug: "A Portfolio Model for National IT R&D Strategy Project Selection Methods"
 title: "A Portfolio Model for National IT R&D Strategy Project Selection Methods"
-authors: [Dong-Hyun Ryu, Woo Jin Lee]
+authors: [Dong-Hyun Ryu, 이우진]
 date: 2011-10-01
 ---
 

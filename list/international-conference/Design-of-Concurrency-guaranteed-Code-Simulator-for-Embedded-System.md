@@ -1,7 +1,7 @@
 ---
 slug: "Design of Concurrency-guaranteed Code Simulator for Embedded System"
 title: "Design of Concurrency-guaranteed Code Simulator for Embedded System"
-authors: [Sunghee Lee, Baek Tae-san, Woo Jin Lee]
+authors: [Sunghee Lee, Tae-San Baek, Woo Jin Lee]
 date: 2016-01-12
 ---
 

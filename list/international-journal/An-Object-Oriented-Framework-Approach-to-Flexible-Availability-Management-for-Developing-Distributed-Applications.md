@@ -1,8 +1,7 @@
 ---
 slug: "An Object-Oriented Framework Approach to Flexible Availability Management for Developing Distributed Applications"
 title: "An Object-Oriented Framework Approach to Flexible Availability Management for Developing Distributed Applications"
-authors:
-  [Heung Seok Chae, Jian Feng Cui, Jin Wook Park, Jae Geol Park, Woo Jin Lee]
+authors: [Heung Seok Chae, Jian Feng Cui, Jin Wook Park, Jae Geol Park, Woo Jin Lee]
 date: 2009-07-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 slug: "Test Case Generation for Integrating Medical Systems Considering Function Characteristics"
 title: "Test Case Generation for Integrating Medical Systems Considering Function Characteristics"
-authors: [Youngsul Shin, Muhammad I. Hossain, Woo Jin Lee]
+authors: [Youngsul Shin, Hossain Muhammad Iqbal, Woo Jin Lee]
 date: 2012-02-15
 ---
 
