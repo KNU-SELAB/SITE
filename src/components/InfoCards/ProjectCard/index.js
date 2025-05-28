@@ -1,9 +1,8 @@
-// src/components/InfoCards/ProjectCard/index.js
 import React from 'react';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
-import Link from '@docusaurus/Link'; // 제목 링크를 위해 Docusaurus Link 사용
+import Link from '@docusaurus/Link';
 
 export default function ProjectCard({
   projectName = "제목 없는 과제",
@@ -13,7 +12,7 @@ export default function ProjectCard({
   fundingSources = [],
   technologies = [],
   imageUrl,
-  projectLink, // 제목에 사용될 링크
+  projectLink,
 }) {
   const { withBaseUrl } = useBaseUrlUtils();
 
@@ -29,11 +28,11 @@ export default function ProjectCard({
         <div className={styles.header} >
           {projectName && (
             projectLink ? (
-              <Link // 제목을 Docusaurus Link로 변경
+              <Link 
                 to={projectLink.startsWith('http') ? projectLink : withBaseUrl(projectLink)}
-                className={styles.projectNameLink} // 링크 스타일 적용
+                className={styles.projectNameLink}
               >
-                <h2 className={styles.projectNameH2}>{projectName}</h2> {/* 스타일 일관성을 위해 내부 h2에 별도 클래스 또는 태그 직접 사용 */}
+                <h2 className={styles.projectNameH2}>{projectName}</h2>
               </Link>
             ) : (
               <h2 className={styles.projectNameH2}>{projectName}</h2>

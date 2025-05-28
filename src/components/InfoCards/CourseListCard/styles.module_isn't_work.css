@@ -1,13 +1,11 @@
-/* src/components/InfoCards/CourseListCard/styles.module.css */
 .courseListCard {
   background-color: var(--homepage-card-bg);
   color: var(--info-card-text-color);
   width: 100%;
   min-height: var(--info-card-min-height);
-  /* height: 100%; */ /* 사용자 피드백: 제거 */
   display: flex;
   flex-direction: column;
-  padding: 0; /* 내부 섹션들이 패딩을 갖도록 변경 */
+  padding: 0;
   overflow-y: auto;
   border: 1px solid var(--homepage-card-border-color);
   border-radius: 12px;
@@ -24,10 +22,10 @@
   display: flex;
   align-items: center;
   margin-bottom: var(--info-card-title-margin-bottom);
-  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal) 0.75rem; /* 헤더 내부 패딩 */
+  padding: var(--info-card-padding-vertical) var(--info-card-padding-horizontal) 0.75rem; 
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   transition: border-bottom-color var(--theme-transition-duration) var(--theme-transition-timing-function);
-  flex-shrink: 0; /* 헤더 높이 고정 */
+  flex-shrink: 0;
 }
 
 .cardIconHeader {
@@ -38,37 +36,35 @@
   transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 
-.cardTitleH2 { /* h2 태그 자체 (Link로 감싸짐) */
+.cardTitleH2 {
   font-size: var(--info-card-title-font-size);
-  font-weight: var(--info-card-title-font-weight); /* animated-text-link가 bold를 강제하므로 여기선 기본값 */
+  font-weight: var(--info-card-title-font-weight);
   margin: 0;
   line-height: 1.3;
-  color: var(--info-card-title-color); /* 부모 Link의 색상을 상속 (animated-text-link가 설정) */
+  color: var(--info-card-title-color);
 }
 
-.cardTitleLink { /* 카드 전체 제목을 감싸는 Link 컴포넌트 */
-  color: var(--info-card-title-color); /* animated-text-link의 기본 색상을 오버라이드 */
-  display: inline-block; /* animated-text-link의 ::after를 위해 */
-  /* font-weight, position, text-decoration, ::after 등은 animated-text-link 에서 처리 */
+.cardTitleLink {
+  color: var(--info-card-title-color); 
+  display: inline-block;
   transition: color var(--theme-transition-duration) var(--theme-transition-timing-function),
               filter 0.2s ease-in-out;
 }
 
 .cardTitleLink:hover {
-  color: var(--ifm-link-hover-color); /* animated-text-link의 호버 색상과 일치 또는 커스텀 */
-  filter: brightness(1.1); /* 선택적 밝기 효과 */
+  color: var(--ifm-link-hover-color);
+  filter: brightness(1.1); 
 }
 
-.courseList { /* ul 태그 */
+.courseList { 
   list-style: none;
-  padding: 0 var(--info-card-padding-horizontal) var(--info-card-padding-vertical); /* 목록 영역 패딩 */
+  padding: 0 var(--info-card-padding-horizontal) var(--info-card-padding-vertical); 
   margin: 0;
   flex-grow: 1;
-  overflow-y: auto; /* 목록이 길 경우 자체 스크롤 */
+  overflow-y: auto;
 }
 
-/* .courseItemOuter 클래스는 제거됨, li에 직접 스타일 또는 Link에 스타일 */
-.courseList li { /* li 태그 자체에는 최소한의 스타일만 적용 */
+.courseList li { 
   border-bottom: 1px dashed var(--ifm-color-emphasis-200);
   transition: border-bottom-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
@@ -76,26 +72,23 @@
   border-bottom: none;
 }
 
-.courseItemLink { /* 각 강의 항목을 감싸는 Link */
+.courseItemLink {
   display: block;
-  color: var(--info-card-text-color); /* 링크지만 내부 텍스트는 카드 기본 텍스트 색상 사용 */
+  color: var(--info-card-text-color);
   text-decoration: none;
-  padding: 0.85rem 0.25rem; /* 클릭 영역 및 내부 여백 */
+  padding: 0.85rem 0.25rem; 
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out, 
               color var(--theme-transition-duration) var(--theme-transition-timing-function);
 }
 .courseItemLink:hover {
   background-color: var(--ifm-hover-overlay);
-  color: var(--ifm-font-color-base); /* 호버 시 텍스트 색상 약간 변경 */
+  color: var(--ifm-font-color-base);
 }
-.courseItemLink:hover .courseName { /* 호버 시 강의명 색상 (일반 링크 호버 색상) */
+.courseItemLink:hover .courseName {
   color: var(--ifm-link-hover-color);
 }
 
-.courseItemContent {
-  /* Link 내부에 실제 컨텐츠를 위한 div (특별한 스타일 불필요 시 제거 가능) */
-}
 
 .courseInfo {
   display: flex;
@@ -105,13 +98,11 @@
   margin-bottom: 0.5rem;
 }
 
-.courseName { /* 강의명 텍스트 */
+.courseName { 
   font-size: var(--info-card-subtitle-font-size);
-  font-weight: var(--info-card-subtitle-font-weight); /* 일반 텍스트는 bold 아님 */
-  color: var(--info-card-subtitle-color); /* 부제목과 유사한 색상 */
+  font-weight: var(--info-card-subtitle-font-weight);
+  color: var(--info-card-subtitle-color); 
   transition: color var(--theme-transition-duration) var(--theme-transition-timing-function);
-  /* 만약 courseName만 animated-text-link로 만들고 싶다면, JS에서 클래스 추가하고 아래 주석 해제 */
-  /* position: relative; */ /* animated-text-link 적용 시 필요 */
 }
 
 .courseMeta {

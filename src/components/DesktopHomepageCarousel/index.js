@@ -3,23 +3,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import styles from './styles.module.css';
 
-// 이전에 생성한 4가지 카드 컴포넌트를 import 합니다.
-// 경로가 정확한지 확인하세요.
 import ProfessorCard from '@site/src/components/InfoCards/ProfessorCard';
 import ProjectCard from '@site/src/components/InfoCards/ProjectCard';
 import TopicCard from '@site/src/components/InfoCards/TopicCard';
 import CourseListCard from '@site/src/components/InfoCards/CourseListCard';
 
-// 캐러셀에 표시할 아이템 데이터 정의
-// 각 아이템은 어떤 종류의 카드인지(type)와 해당 카드에 전달할 props를 가집니다.
 const carouselItems = [
   {
     id: 'professor-info',
-    type: 'professor', // 카드 종류 식별자
+    type: 'professor',
     props: {
       name: "이우진 교수님",
       title: "경북대학교 Software Testing Lab.",
-      photoUrl: "/img/Professor.jpg", // 실제 이미지로 교체
+      photoUrl: "/img/Professor.jpg",
       email: "woojin@knu.ac.kr",
       office: "IT융복합관 521호",
       education: [
@@ -33,7 +29,7 @@ const carouselItems = [
         "온라인 학습 데이터를 활용한 AI기반 학습효과 증진 기법 연구",
         "섬유 방사 및 염색 공정 데이터를 활용한 물성 예측 AI 모델 개발"
       ],
-      labPageLink: "/lab-introduction", // 실제 연구실 소개 페이지 링크
+      labPageLink: "/STLAB/About-Us",
     }
   },
   {
@@ -46,7 +42,7 @@ const carouselItems = [
       description: "머신러닝 모델을 활용하여 소프트웨어 변경 사항에 따라 최적의 테스트 케이스를 자동으로 생성하고 우선순위를 부여하는 시스템을 개발합니다.",
       fundingSources: [{name:"DYETEC", link:"https://www.dyetec.or.kr/"}],
       technologies: ["C++", "Python", "ROS", "Machine Learning", "AWS"],
-      imageUrl: "/img/dyetec.jpg", // 실제 프로젝트 이미지로 교체
+      imageUrl: "/img/dyetec.jpg",
       projectLink: "/projects/intelligent-mobility-platform",
     }
   },
@@ -78,7 +74,6 @@ const carouselItems = [
 ];
 
 export default function DescktopHompageCarousel() {
-  // 카드 타입에 따라 적절한 컴포넌트를 렌더링하는 함수
   const renderCardComponent = (item) => {
     switch (item.type) {
       case 'professor':
@@ -96,19 +91,18 @@ export default function DescktopHompageCarousel() {
 
   return (
     <section className={styles.carouselSection}>
-      <div className="container"> {/* Docusaurus의 container로 감싸서 적절한 너비 유지 */}
+      <div className="container"> 
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
-          spaceBetween={30}
+          spaceBetween={40}
           slidesPerView={1}
           navigation={false}
           pagination={{ clickable: true }}
           loop={true}
-          // autoplay={{
-          //   delay: 7000, // 카드 내용이 많으므로 지연 시간 증가 (7초)
-          //   disableOnInteraction: false,
-          // }}
-          effect="slide" // 'slide' 또는 다른 효과로 변경 가능
+          autoplay={{
+            delay: 7000
+          }}
+          effect="fade" // 'slide' 또는 다른 효과로 변경 가능
           fadeEffect={{
             crossFade: true
           }}
@@ -117,7 +111,6 @@ export default function DescktopHompageCarousel() {
         >
           {carouselItems.map((item) => (
             <SwiperSlide key={item.id} className={styles.swiperSlide}>
-              {/* 각 슬라이드 내부에 해당 카드 컴포넌트를 렌더링 */}
               {renderCardComponent(item)}
             </SwiperSlide>
           ))}

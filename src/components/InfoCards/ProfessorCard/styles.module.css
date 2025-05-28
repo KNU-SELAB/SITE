@@ -1,11 +1,9 @@
-/* src/components/InfoCards/ProfessorCard/styles.module.css */
 .professorCard {
   background-color: var(--homepage-card-bg);
   color: var(--info-card-text-color);
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* overflow: hidden; */
   position: relative;
 
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function),
@@ -25,7 +23,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* 모바일: 사진 하단 흐리게 - 더 좁고 자연스럽게 */
     -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
     mask-image: linear-gradient(to right, black 85%, transparent 100%);
 }
@@ -41,13 +38,12 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: var(--homepage-card-bg); /* 중요 */
+  background-color: var(--homepage-card-bg);
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
   position: relative;
-  z-index: 0; /* 오버레이가 없으므로 z-index 불필요 또는 낮춤 */
+  z-index: 0;
 }
 
-/* 호버 시 나타날 텍스트 컨테이너 (상태 기반으로 변경) */
 .hoverLinkTextContainer {
   position: absolute;
   top: 0;
@@ -58,12 +54,12 @@
   align-items: center;
   justify-content: center;
   background-color: var(--professor-card-hover-overlay-bg);
-  opacity: 0; /* 초기 상태: 숨김 */
-  visibility: hidden; /* 초기 상태: 숨김 */
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  z-index: 2; /* 다른 내용 위에 표시 */
+  z-index: 2;
   pointer-events: none;
-  border-radius: inherit; /* professorCard의 radius 상속 */
+  border-radius: inherit;
 }
 
 .hoverLinkText {
@@ -75,7 +71,6 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* JavaScript에 의해 .overlayActive 클래스가 .professorCard에 추가되었을 때만 오버레이 및 블러 효과 적용 */
 .professorCard.overlayActive .hoverLinkTextContainer {
   opacity: 1;
   visibility: visible;
@@ -83,13 +78,9 @@
 
 .professorCard.overlayActive .photoArea,
 .professorCard.overlayActive .infoSection {
-  filter: blur(3px); /* 블러 효과만 적용 */
+  filter: blur(3px);
 }
 
-
-/* --- 나머지 스타일 (.name, .title, .contactInfo 등) --- */
-/* 이전 답변의 ProfessorCard 내부 요소 스타일들을 여기에 그대로 사용합니다. */
-/* (이미 --info-card-* 변수들을 잘 활용하고 있음) */
 .name {
   color: var(--info-card-title-color);
   font-size: var(--info-card-title-font-size);
@@ -125,14 +116,14 @@
 
 
 .labLinkButtonContainer {
-  margin-top: 0.5rem; /* 사무실 정보와의 간격 */
+  margin-top: 0.5rem; 
   gap: 0.5em;
 }
 .detailSection {
   margin-top: 1rem;
 }
 .detailSection:last-of-type {
-  flex-grow: 1; /* 마지막 섹션이 남은 공간을 채워 일관된 하단 정렬 효과 (버튼이 중간에 오므로 이젠 덜 중요) */
+  flex-grow: 1; 
 }
 .detailTitle {
   font-size: var(--info-card-subtitle-font-size);
@@ -154,11 +145,10 @@
   line-height: var(--info-card-text-line-height);
 }
 .detailSection ul li,
-.interestsList li { /* .interestItem 클래스 대신 직접 li 스타일링 */
+.interestsList li {
   margin-bottom: var(--info-card-list-item-margin-bottom);
-  /* 태그 스타일 제거 */
   background-color: transparent;
-  color: inherit; /* .interestsList의 color 상속 */
+  color: inherit;
   padding: 0;
   border-radius: 0;
   border: none;

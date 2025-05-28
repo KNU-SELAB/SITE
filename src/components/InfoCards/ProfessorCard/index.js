@@ -1,4 +1,4 @@
-import React from 'react'; // useState 제거
+import React from 'react';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
@@ -23,7 +23,7 @@ export default function ProfessorCard({
   ],
   labPageLink,
 }) {
-  const { withBaseUrl } = useBaseUrlUtils(); // labPageLink가 상대 경로일 경우를 위해 유지
+  const { withBaseUrl } = useBaseUrlUtils();
 
   const photoAreaStyle = photoUrl
     ? { backgroundImage: `url(${photoUrl.startsWith('http') ? photoUrl : withBaseUrl(photoUrl)})` } // 외부/내부 URL 처리
@@ -37,7 +37,6 @@ export default function ProfessorCard({
       };
 
   return (
-    // clickableCard 클래스 및 클릭/더블클릭 핸들러 제거
     <div className={styles.professorCard}>
       <div
         className={styles.photoArea}
@@ -64,10 +63,6 @@ export default function ProfessorCard({
           </div>
         )}
         </div>
-
-        {/* "연구실 구성원 확인하기" 버튼 추가 */}
-        
-
         {education && education.length > 0 && (
           <div className={styles.detailSection}>
             <h4 className={styles.detailTitle}>학력</h4>
@@ -84,13 +79,12 @@ export default function ProfessorCard({
             <h4 className={styles.detailTitle}>주요 연구 분야</h4>
             <ul className={styles.interestsList}>
               {researchInterests.map((interest, index) => (
-                <li key={index}>{interest}</li> // .interestItem 클래스 제거 또는 기본 li 스타일로 통합
+                <li key={index}>{interest}</li>
               ))}
             </ul>
           </div>
         )}
       </div>
-      {/* 호버 오버레이 관련 JSX 제거됨 */}
     </div>
   );
 }

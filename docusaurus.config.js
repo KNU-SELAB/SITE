@@ -43,6 +43,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          path: './stlab',
+          routeBasePath: 'STLAB',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -69,7 +71,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -86,7 +88,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -103,7 +105,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -120,7 +122,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -137,7 +139,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -154,7 +156,7 @@ const config = {
         feedOptions:{
           type:['rss','atom'],
           title:'',
-          copyright: `Copyright © ${new Date().getFullYear()} KNU ESELAB.`,
+          copyright: `Copyright © ${new Date().getFullYear()} KNU STLAB.`,
         },
       },
     ],
@@ -162,20 +164,19 @@ const config = {
   themeConfig:
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.svg',
       navbar: {
         title: 'STLAB',
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
+            sidebarId: 'STLABSidebar',
+            position: 'right',
+            label: 'STLAB DOCS',
           },
-          {to: '/Course', label: 'Course', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://github.com/knu-eselab/',
+            label: 'GITHUB',
             position: 'right',
           },
         ],
@@ -183,6 +184,19 @@ const config = {
       footer: {
         style: 'light',
         links: [
+          {
+            title: 'STLAB.',
+            items: [
+              {
+                label: 'About Us',
+                to: '/STLAB/About-Us',
+              },
+              {
+                label: 'Calendar',
+                to: '/STLAB/Calendar',
+              },
+            ],
+          },
           {
             title: 'Conference',
             items: [
@@ -203,23 +217,6 @@ const config = {
               },{
                 label: 'International',
                 to: '/Journal/International',
-              },
-            ],
-          },
-          {
-            title: 'About Us',
-            items: [
-              {
-                label: 'Courses',
-                to: '/Course',
-              },
-              {
-                label: 'Github',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-              {
-                label: 'Professor',
-                href: 'http://gscse.knu.ac.kr/bbs/board.php?bo_table=sub2_1&wr_id=21',
               },
             ],
           },
