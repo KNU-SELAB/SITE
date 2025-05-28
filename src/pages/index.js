@@ -48,7 +48,7 @@ function HomepageHeader() {
         <div className={clsx(styles.buttons, 'animate-on-scroll', styles.delay3)}>
           <Link
             className={clsx('button button--lg', styles.heroButtonPrimary)}
-            to="/docs/intro">
+            to="/STLAB">
             랩 소개 보기
           </Link>
         </div>
