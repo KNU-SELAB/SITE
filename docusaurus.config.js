@@ -64,7 +64,7 @@ const config = {
         path:'./list/domestic-conference',
         blogTitle:'국내 학술대회',
         blogDescription:'국내 학술대회 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -81,7 +81,7 @@ const config = {
         path:'./list/international-conference',
         blogTitle:'국제 학술대회',
         blogDescription:'국제 학술대회 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -98,7 +98,7 @@ const config = {
         path:'./list/domestic-journal',
         blogTitle:'국내 저널',
         blogDescription:'국내 저널 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -115,7 +115,7 @@ const config = {
         path:'./list/international-journal',
         blogTitle:'국제 저널',
         blogDescription:'국제 저널 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -132,7 +132,7 @@ const config = {
         path:'./list/patent',
         blogTitle:'특허',
         blogDescription:'특허 관련',
-        blogSidebarCount:5,
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
@@ -149,7 +149,7 @@ const config = {
         path:'./list/course',
         blogTitle:'강의',
         blogDescription:'강의 관련',
-        blogSidebarCount:'ALL',
+        blogSidebarCount:10,
         postsPerPage:10,
         feedOptions:{
           type:['rss','atom'],
